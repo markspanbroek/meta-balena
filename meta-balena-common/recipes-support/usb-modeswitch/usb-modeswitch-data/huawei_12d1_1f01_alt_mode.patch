@@ -1,0 +1,21 @@
+Use the new HuaweiAltMode to set the modem away from the
+cdc_ether legacy mode (Hilink mode) to the faster mbim mode
+when possible.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
+
+Index: usb-modeswitch-data-20191128/usb_modeswitch.d/12d1:1f01
+===================================================================
+--- usb-modeswitch-data-20191128.orig/usb_modeswitch.d/12d1:1f01
++++ usb-modeswitch-data-20191128/usb_modeswitch.d/12d1:1f01
+@@ -1,6 +1,7 @@
+ # Huawei E353 (3.se) and others
+ TargetVendor=0x12d1
+ TargetProductList="14db,14dc"
+-HuaweiNewMode=1
+-
++#HuaweiNewMode=1
++# Enable alt mode so to bring the modem into PPP or NCM mode (switches away from Hilink mode)                                                                                                                                                
++HuaweiAltMode=1
+ 
