@@ -14,6 +14,7 @@ include packagegroup-resin.inc
 
 # Additional packages
 RDEPENDS_${PN} += " \
+    balena-vacuum-logs \
     dosfstools \
     docker-disk \
     hostapp-update \
