@@ -32,7 +32,13 @@ inherit core-image
 IMAGE_ROOTFS_SIZE = "8192"
 IMAGE_OVERHEAD_FACTOR = "1.0"
 IMAGE_ROOTFS_EXTRA_SPACE = "0"
-IMAGE_ROOTFS_MAXSIZE = "12288"
+IMAGE_ROOTFS_MAXSIZE_remove = "12288"
+IMAGE_ROOTFS_MAXSIZE_remove = "12300"
+IMAGE_ROOTFS_MAXSIZE_remove = "16384"
 
+python __anonymous() {
+    if d.getVar('IMAGE_ROOTFS_MAXSIZE') == '':
+        d.setVar('IMAGE_ROOTFS_MAXSIZE', '16384')
+}
 
 BAD_RECOMMENDATIONS += "busybox-syslog"
